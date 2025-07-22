@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #kqcheck {
+        display: flex;
+    }
+</style>
+
+<body>
+    <input id="input" placeholder="dd/mm/yy" type="text">
+    <button id="btncheck"> check ngay sinh</button>
+    <span id="kqcheck"></span>
+</body>
+<script>
+    var btncheck = document.getElementById("btncheck");
+    btncheck.onclick = () => {
+        var dateinput = document.getElementById("input").value;
+        var parts = dateinput.split("/");
+        var year = parseInt(parts[2], 10);
+        var month = parseInt(parts[1], 10) - 1;
+        var day = parseInt(parts[0], 10);
+        var date = new Date(year, month, day);
+        var today = new Date();
+        if (date.getFullYear() === year &&
+            date.getMonth() === month &&
+            date.getDate() === day) {
+            if (isNaN(date.getTime())) {
+                document.getElementById("kqcheck").textContent = "khong phai ngay sinh";
+                return;
+            } else {
+                if (date < today) {
+                    document.getElementById("kqcheck").textContent = "ngay hop le";
+
+                } else {
+                    document.getElementById("kqcheck").textContent = "khong phai ngay sinh";
+
+                    return;
+                }
+            }
+        } else {
+            document.getElementById("kqcheck").textContent = "khong phai ngay sinh";
+            return;
+        }
+    }
+</script>
+
+</html>
