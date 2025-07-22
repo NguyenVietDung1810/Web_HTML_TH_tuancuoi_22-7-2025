@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #kqcheck {
+        display: flex;
+        background-color: green;
+    }
+    
+    #kqchecksai {
+        display: flex;
+        background-color: red;
+    }
+</style>
+
+<body>
+    <input id="name" placeholder="name" type="text">
+    <button id="btncheck">check name</button>
+    <span id="kqcheck"></span>
+    <span id="kqchecksai"></span>
+    <script>
+        btncheck.onclick = function checksdt() {
+            const nameinput = document.getElementById("name").value.trim();
+            const btncheck = document.getElementById("btncheck");
+            const namecheck = /^[a-zA-Z\s]+$/;
+            if (namecheck.test(nameinput)) {
+                document.getElementById("kqcheck").textContent = "pass";
+            } else {
+                document.getElementById("kqchecksai").textContent = "ten khong duoc chua ki tu dac bien va so";
+            }
+        }
+    </script>
+</body>
+
+</html>
