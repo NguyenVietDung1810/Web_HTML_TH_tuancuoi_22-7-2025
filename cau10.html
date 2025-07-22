@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckURL</title>
+</head>
+<style>
+    span {
+        display: flex;
+    }
+</style>
+
+<body>
+    <input type="text" , id="checkurl">
+
+    <button id="btnCheck">Check url</button>
+    <span id="testurl"></span>
+    <script>
+        var checkurl = document.getElementById('checkurl');
+        var testurl = document.getElementById('testurl');
+        var btnCheck = document.getElementById('btnCheck');
+
+        function checkURL() {
+            var pattern = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/;
+            var logic = pattern.test(checkurl.value);
+            if (logic) {
+                testurl.innerText = 'Day la URL';
+            } else {
+                testurl.innerText = 'Day khong phai URL';
+            }
+        }
+        btnCheck.onclick = checkURL;
+    </script>
+</body>
+
+</html>
