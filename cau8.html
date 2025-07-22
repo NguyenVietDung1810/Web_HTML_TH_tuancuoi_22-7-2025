@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check ma buu dien</title>
+</head>
+<style>
+    span {
+        display: flex;
+    }
+</style>
+
+<body>
+    <input type="text" , id="checkmbd">
+
+    <button id="btnCheck">Check mbd</button>
+    <span id="testmbd"></span>
+    <script>
+        var checkmbd = document.getElementById('checkmbd');
+        var testmbd = document.getElementById('testmbd');
+        var btnCheck = document.getElementById('btnCheck');
+
+        function checkMbd() {
+            var pattern = /^\d{5}$/;
+            var logic = pattern.test(checkmbd.value);
+            if (logic) {
+                testmbd.innerText = 'Day la ma buu dien';
+            } else {
+                testmbd.innerText = 'Day khong phai la ma buu dien tu!!!'
+            }
+        }
+        btnCheck.onclick = checkMbd;
+    </script>
+</body>
+
+</html>
