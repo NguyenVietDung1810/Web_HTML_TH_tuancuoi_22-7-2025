@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="sdt" placeholder="sdt" type="text">
+    <button id="btncheck">check sdt</button>
+    <span id="kqcheck"></span>
+    <script>
+        btncheck.onclick = function checksdt() {
+            console.log('click');
+            const sdtinput = document.getElementById("sdt").value.trim();
+            const btnchecksdt = document.getElementById("btncheck");
+            const sdtcheck = /^0|\+84)[0-9]{9}$/;
+            if (sdtcheck.test(sdtinput)) {
+                console.log("sdt hop le");
+            } else {
+                console.log("sdt khong hop le");
+            }
+        }
+    </script>
+</body>
+
+</html>

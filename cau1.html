@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="email" placeholder="email" type="text">
+    <button id="btncheckemail">check email</button>
+    <span id="kqcheck"></span>
+    <script>
+        btncheckemail.onclick = function checkemail() {
+            const emailinput = document.getElementById("email").value.trim();
+            const btncheckemail = document.getElementById("btncheckemail");
+            const emailcheck = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
+            if (emailcheck.test(emailinput)) {
+                console.log("email hop le");
+            } else {
+                console.log("email khong hop le");
+            }
+        }
+    </script>
+</body>
+
+</html>
