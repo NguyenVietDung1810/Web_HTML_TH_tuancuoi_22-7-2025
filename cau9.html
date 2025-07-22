@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkthetindung</title>
+</head>
+<style>
+    span {
+        display: flex;
+    }
+</style>
+
+<body>
+    <input type="text" , id="checkthetindung">
+    <button id="btnCheck">Check thetindung</button>
+    <span id="testthetindung"></span>
+    <script>
+        var checkthetindung = document.getElementById('checkthetindung');
+        var testthetindung = document.getElementById('testthetindung');
+        var btnCheck = document.getElementById('btnCheck');
+
+        function checkThetindung() {
+            var pattern = /^\d{16}$/;
+            var logic = pattern.test(checkthetindung.value);
+            if (logic) {
+                testthetindung.innerText = 'Day la the tin dung';
+            } else {
+                testthetindung.innerText = 'Day khong phai the tin dung';
+            }
+        }
+        btnCheck.onclick = checkThetindung;
+    </script>
+</body>
+
+</html>
