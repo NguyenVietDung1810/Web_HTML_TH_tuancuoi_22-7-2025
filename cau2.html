@@ -6,18 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    #kqcheck {
+        display: flex;
+        background-color: green;
+    }
+    
+    #kqchecksai {
+        display: flex;
+        background-color: red;
+    }
+</style>
 
 <body>
     <input id="sdt" placeholder="sdt" type="text">
     <button id="btncheck">check sdt</button>
     <span id="kqcheck"></span>
+    <span id="kqchecksai"></span>
     <script>
         btncheck.onclick = function checksdt() {
             const sdtinput = document.getElementById("sdt").value.trim();
             const btncheck = document.getElementById("btncheck");
             const stdcheck = /^(0|\+84)[0-9]{9}$/;
             if (stdcheck.test(sdtinput)) {
-                console.log("so dien thoai hop le");
+                document.getElementById("kqcheck").textContent = "sdt hop le";
+            } else {
+                document.getElementById("kqchecksai").textContent = "sdt khong hop le";
             }
         }
     </script>
