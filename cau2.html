@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
@@ -13,14 +13,11 @@
     <span id="kqcheck"></span>
     <script>
         btncheck.onclick = function checksdt() {
-            console.log('click');
             const sdtinput = document.getElementById("sdt").value.trim();
-            const btnchecksdt = document.getElementById("btncheck");
-            const sdtcheck = /^0|\+84)[0-9]{9}$/;
-            if (sdtcheck.test(sdtinput)) {
-                console.log("sdt hop le");
-            } else {
-                console.log("sdt khong hop le");
+            const btncheck = document.getElementById("btncheck");
+            const stdcheck = /^(0|\+84)[0-9]{9}$/;
+            if (stdcheck.test(sdtinput)) {
+                console.log("so dien thoai hop le");
             }
         }
     </script>
